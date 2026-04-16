@@ -27,7 +27,7 @@ The `data/` folder is explicitly added to the `.gitignore` file. **Do not force-
 
 **Where to get the data:**
 1. **Qrels File:** Download the TREC 8 Ad-hoc Qrels file from [NIST](https://pages.nist.gov/trec-browser/trec8/adhoc/data/).
-2. **System Runs:** Download our assigned group's folder containing 10-15 run files from the[Class Google Drive link provided by the Prof].
+2. **System Runs:** Download our assigned group's folder containing 10-15 run files from the [Class Google Drive link provided by the Prof](https://drive.google.com/drive/folders/10Rsivn7bEGM7PcWseGx8dRbYjgEwHhkF?usp=drive_link).
 
 Place all downloaded files into the `data/` folder locally:
 ```text

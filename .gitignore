@@ -1,0 +1,9 @@
+# Ignore TREC Datasets and System Runs
+data/
+*.qrels
+*.txt
+*.csv
+
+# Ignore specific MacOS/Windows hidden files
+.DS_Store
+Thumbs.db

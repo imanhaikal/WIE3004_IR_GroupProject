@@ -19,7 +19,7 @@ from datetime import datetime
 # CONFIGURATION
 # ==============================
 
-RUNS_DIRECTORY = "D:/set11/set11"
+RUNS_DIRECTORY = "C:/Users/User/Desktop/IR assignment/WIE3004_IR_GroupProject/set11"
 FILE_PATTERN = "*"
 DOC_THRESHOLD = 950      # Less than 950 considered noisy
 

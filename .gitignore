@@ -33,5 +33,9 @@ venv.bak/
 data/*
 !data/.gitkeep
 
+# Generated TREC-derived outputs
+clean_group11_runs_*.csv
+clean_group11_runs_*.pkl
+
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/

@@ -1,3 +1,5 @@
+import json
+import os
 import importlib.util
 import sys
 import unittest
@@ -31,6 +33,29 @@ class CompleteCleanPathTests(unittest.TestCase):
         runs_directory = Path(complete_clean.RUNS_DIRECTORY).resolve()
 
         self.assertEqual(PROJECT_ROOT / "data" / "runs", runs_directory)
+
+    def test_notebook_config_resolves_project_root_from_notebooks_cwd(self):
+        notebook_path = PROJECT_ROOT / "notebooks" / "Info_Retrieval.ipynb"
+        notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
+        config_source = next(
+            "".join(cell["source"])
+            for cell in notebook["cells"]
+            if cell["cell_type"] == "code"
+            and "RUNS_DIRECTORY" in "".join(cell["source"])
+            and "PROJECT_ROOT" in "".join(cell["source"])
+        )
+
+        original_cwd = Path.cwd()
+        namespace = {"Path": Path}
+        try:
+            os.chdir(PROJECT_ROOT / "notebooks")
+            exec(config_source, namespace)
+        finally:
+            os.chdir(original_cwd)
+
+        self.assertEqual(PROJECT_ROOT, namespace["PROJECT_ROOT"])
+        self.assertEqual(PROJECT_ROOT / "data" / "runs", namespace["RUNS_DIRECTORY"])
+        self.assertEqual("input.*", namespace["FILE_PATTERN"])
 
     def test_read_qrels_loads_standard_trec_qrels(self):
         with TemporaryDirectory() as tmp:

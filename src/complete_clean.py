@@ -14,12 +14,14 @@ import pandas as pd
 import os
 import glob
 from datetime import datetime
+from pathlib import Path
 
 # ==============================
 # CONFIGURATION
 # ==============================
 
-RUNS_DIRECTORY = "D:/set11/set11"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RUNS_DIRECTORY = PROJECT_ROOT / "data" / "runs"
 FILE_PATTERN = "*"
 DOC_THRESHOLD = 950      # Less than 950 considered noisy
 

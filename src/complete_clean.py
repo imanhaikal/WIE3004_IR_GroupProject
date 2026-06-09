@@ -20,17 +20,9 @@ from pathlib import Path
 # CONFIGURATION
 # ==============================
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-RUNS_DIRECTORY = PROJECT_ROOT / "data" / "runs"
-QRELS_FILE = PROJECT_ROOT / "data" / "qrels.trec8.adhoc.parts1-5"
-OUTPUT_DIRECTORY = PROJECT_ROOT / "data" / "processed"
-FILE_PATTERN = "input.*"
-DOC_THRESHOLD = 1000      # Less than 1000 considered noisy
-EXPECTED_SYSTEM_COUNT = 15
-NOISY_RUN_REPLACEMENTS = {
-    "isa50": "input.acsys8alo2",
-    "mds08a1": "input.apl8ctd",
-}
+RUNS_DIRECTORY = "C:/Users/User/Desktop/IR assignment/WIE3004_IR_GroupProject/set11"
+FILE_PATTERN = "*"
+DOC_THRESHOLD = 950      # Less than 950 considered noisy
 
 
 # ==============================

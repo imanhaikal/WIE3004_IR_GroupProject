@@ -39,3 +39,5 @@ clean_group11_runs_*.pkl
 
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+.kilo/
